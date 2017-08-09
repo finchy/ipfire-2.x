@@ -258,7 +258,7 @@ if ($snortsettings{'OINKCODE'} ne "") {
 }
 
 if (!$errormessage) {
-	if ($snortsettings{'RULES'} eq 'subscripted') {
+	if ($snortsettings{'RULES'} eq 'subscription') {
 		$url=" https://www.snort.org/rules/snortrules-snapshot-2990.tar.gz?oinkcode=$snortsettings{'OINKCODE'}";
 	} elsif ($snortsettings{'RULES'} eq 'registered') {
 		$url=" https://www.snort.org/rules/snortrules-snapshot-2990.tar.gz?oinkcode=$snortsettings{'OINKCODE'}";
@@ -362,7 +362,7 @@ $selected{'RULES'}{'nothing'} = '';
 $selected{'RULES'}{'community'} = '';
 $selected{'RULES'}{'emerging'} = '';
 $selected{'RULES'}{'registered'} = '';
-$selected{'RULES'}{'subscripted'} = '';
+$selected{'RULES'}{'subscription'} = '';
 $selected{'RULES'}{$snortsettings{'RULES'}} = "selected='selected'";
 
 &Header::openpage($Lang::tr{'intrusion detection system'}, 1, '');
@@ -474,7 +474,7 @@ print <<END
 				<option value='emerging' $selected{'RULES'}{'emerging'} >$Lang::tr{'emerging rules'}</option>
 				<option value='community' $selected{'RULES'}{'community'} >$Lang::tr{'community rules'}</option>
 				<option value='registered' $selected{'RULES'}{'registered'} >$Lang::tr{'registered user rules'}</option>
-				<option value='subscripted' $selected{'RULES'}{'subscripted'} >$Lang::tr{'subscripted user rules'}</option>
+				<option value='subscription' $selected{'RULES'}{'subscription'} >$Lang::tr{'subscription user rules'}</option>
 			</select>
 	</td>
 </tr>
